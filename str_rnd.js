@@ -1,4 +1,4 @@
-//str_rnd.js
+//Random sring generator
 
 ;(function(w){
 
@@ -9,13 +9,11 @@ var _chars = {
 	// 'alt': '☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓→←∟↔▲▼'
 };
 
-var _randomnumber = function(n){
-	return Math.round(Math.random()*(n-1));
-}
-
 var _stringrandom = function(leng,dict){
 
 	var result = '';
+
+	var randomnumber = function(n){ return Math.round(Math.random()*(n-1));	};
 
 	var str = function(dictionaries){
 
@@ -36,7 +34,7 @@ var _stringrandom = function(leng,dict){
 	var mergestring = (dict)? str(dict.split(',')) : str(false);
 
 	for (var i = leng - 1; i >= 0; i--) {
-		result += mergestring[_randomnumber(mergestring.length)];
+		result += mergestring[randomnumber(mergestring.length)];
 	}
 
     return result;
